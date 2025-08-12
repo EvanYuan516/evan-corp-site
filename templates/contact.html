@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}联系我们 - Evan Corp{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="mb-4">联系我们</h1>
+
+  <!-- 📞 联系方式 -->
+  <div class="row mb-5">
+    <div class="col-md-4">
+      <h5>电话</h5>
+      <p>+86 138-8888-8888</p>
+    </div>
+    <div class="col-md-4">
+      <h5>邮箱</h5>
+      <p>contact@evancorp.com</p>
+    </div>
+    <div class="col-md-4">
+      <h5>地址</h5>
+      <p>广东省广州市天河区创意园B1栋</p>
+    </div>
+  </div>
+
+  <!-- ✉️ 联系表单 -->
+  <form action="/contact" method="POST">
+    <div class="mb-3">
+      <label for="name" class="form-label">姓名</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">邮箱</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="message" class="form-label">留言内容</label>
+      <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">提交</button>
+  </form>
+</div>
+{% endblock %}
