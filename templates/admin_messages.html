@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}留言列表 - Evan Corp{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">留言列表</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th><th>姓名</th><th>邮箱</th><th>内容</th><th>IP</th><th>时间</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for m in messages %}
+    <tr>
+      <td>{{ m.id }}</td>
+      <td>{{ m.name }}</td>
+      <td>{{ m.email }}</td>
+      <td style="max-width:500px; white-space:pre-wrap;">{{ m.content }}</td>
+      <td>{{ m.ip }}</td>
+      <td>{{ m.created_at.strftime("%Y-%m-%d %H:%M") }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
